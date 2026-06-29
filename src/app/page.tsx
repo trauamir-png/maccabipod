@@ -162,8 +162,7 @@ export default async function HomePage() {
             <h2 className="text-xl font-bold text-white mb-2">מי אנחנו?</h2>
             <p className="text-white text-sm leading-relaxed">
               אמיר טראו, גיא קופיצ&apos;ינסקי, יאיר זרצקי ואיתי כהן – ארבעה
-              אוהדים שיודעים לדבר על כדורסל. 278+ פרקים, 191K+ הורדות,
-              ותשוקה אמיתית למכבי תל אביב.
+              אוהדים שיודעים לדבר על כדורסל. 278+ פרקים ותשוקה אמיתית למכבי תל אביב.
             </p>
           </div>
           <Link
