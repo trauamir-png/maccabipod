@@ -4,7 +4,7 @@ import { Play, Headphones, ArrowLeft, Users } from "lucide-react";
 import { getEpisodes } from "@/lib/rss";
 import EpisodeCard from "@/components/EpisodeCard";
 
-export const revalidate = 3600;
+export const revalidate = 1200;
 
 const stats = [
   { label: "פרקים", value: "278+", color: "text-maccabi-yellow" },

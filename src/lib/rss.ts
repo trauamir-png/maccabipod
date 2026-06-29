@@ -86,7 +86,7 @@ export async function getEpisodes(): Promise<Episode[]> {
   });
 
   try {
-    const res = await fetch(RSS_URL, { next: { revalidate: 3600 } });
+    const res = await fetch(RSS_URL, { next: { revalidate: 1200 } });
     if (!res.ok) throw new Error(`RSS fetch failed: ${res.status}`);
     const xml = await res.text();
     const feed = await parser.parseString(xml);

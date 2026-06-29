@@ -4,7 +4,7 @@ import { getEpisodes } from "@/lib/rss";
 import EpisodeCard from "@/components/EpisodeCard";
 import Pagination from "@/components/Pagination";
 
-export const revalidate = 3600;
+export const revalidate = 1200;
 export const dynamicParams = true;
 
 const EPISODES_PER_PAGE = 15;
@@ -69,7 +69,7 @@ export default async function EpisodesPagePaginated({
         <>
           <div className="flex flex-col gap-4">
             {episodes.map((ep) => (
-              <EpisodeCard key={ep.id} episode={ep} />
+              <EpisodeCard key={ep.id} episode={ep} hideEpisodeNumber />
             ))}
           </div>
 

@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-x-6 gap-y-8">
 
           {/* Brand — first child = RIGHT column in RTL */}
-          <div className="text-right">
+          <div className="text-center md:text-right">
             <Link href="/" className="inline-block mb-3">
               <Image
                 src="/logo.png"
@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
 
           {/* ניווט */}
-          <div>
+          <div className="text-center md:text-right">
             <h3 className="text-maccabi-yellow font-semibold mb-3 text-xs uppercase tracking-wider">
               ניווט
             </h3>
@@ -57,11 +57,11 @@ export default function Footer() {
           </div>
 
           {/* האזנה */}
-          <div>
+          <div className="text-center md:text-right">
             <h3 className="text-maccabi-yellow font-semibold mb-3 text-xs uppercase tracking-wider">
               האזנה
             </h3>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 items-center md:items-stretch">
               {listen.map((link) => (
                 <a
                   key={link.platform}
@@ -78,11 +78,11 @@ export default function Footer() {
           </div>
 
           {/* עקבו אחרינו — col 5 (leftmost), col 4 left as spacer */}
-          <div className="md:col-start-5">
+          <div className="text-center md:text-right md:col-start-5">
             <h3 className="text-maccabi-yellow font-semibold mb-3 text-xs uppercase tracking-wider">
               עקבו אחרינו
             </h3>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 items-center md:items-stretch">
               {follow.map((link) => (
                 <a
                   key={link.platform}
