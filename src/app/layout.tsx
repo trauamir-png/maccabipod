@@ -14,13 +14,12 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "מכביפוד – הפודקאסט על מכבי תל אביב",
-  description:
-    "הפודקאסט העברי המוביל על מכבי תל אביב. ניתוחים, שיחות, ותשוקה לכדורסל.",
+  title: "מכביפוד",
+  description: "פודקאסט האוהדים על מכבי תל אביב בכדורסל",
   keywords: ["מכבי תל אביב", "פודקאסט", "כדורסל", "יורוליג"],
   openGraph: {
     title: "מכביפוד",
-    description: "הפודקאסט העברי המוביל על מכבי תל אביב",
+    description: "פודקאסט האוהדים על מכבי תל אביב בכדורסל",
     locale: "he_IL",
     type: "website",
     images: [{ url: "/logo-square.png", width: 1400, height: 1400, alt: "מכביפוד" }],
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "מכביפוד",
-    description: "הפודקאסט העברי המוביל על מכבי תל אביב",
+    description: "פודקאסט האוהדים על מכבי תל אביב בכדורסל",
     images: ["/logo-square.png"],
   },
 };
