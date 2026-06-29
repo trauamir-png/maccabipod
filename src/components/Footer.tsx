@@ -61,14 +61,14 @@ export default function Footer() {
             <h3 className="text-maccabi-yellow font-semibold mb-3 text-xs uppercase tracking-wider">
               האזנה
             </h3>
-            <div className="flex flex-col gap-2 items-center md:items-stretch">
+            <div className="flex flex-col gap-2 w-full max-w-[260px] mx-auto md:max-w-none md:mx-0">
               {listen.map((link) => (
                 <a
                   key={link.platform}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-navy-800 hover:bg-navy-700 border border-navy-600 hover:border-maccabi-blue/50 text-white px-3 py-2 rounded-lg text-xs transition-all"
+                  className="flex items-center justify-center md:justify-start gap-2 w-full bg-navy-800 hover:bg-navy-700 border border-navy-600 hover:border-maccabi-blue/50 text-white px-3 py-2 rounded-lg text-xs transition-all"
                 >
                   <SocialIcon platform={link.platform} className="w-4 h-4" />
                   {link.label}
@@ -82,14 +82,14 @@ export default function Footer() {
             <h3 className="text-maccabi-yellow font-semibold mb-3 text-xs uppercase tracking-wider">
               עקבו אחרינו
             </h3>
-            <div className="flex flex-col gap-2 items-center md:items-stretch">
+            <div className="flex flex-col gap-2 w-full max-w-[260px] mx-auto md:max-w-none md:mx-0">
               {follow.map((link) => (
                 <a
                   key={link.platform}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-navy-800 hover:bg-navy-700 border border-navy-600 hover:border-maccabi-blue/50 text-white px-3 py-2 rounded-lg text-xs transition-all"
+                  className="flex items-center justify-center md:justify-start gap-2 w-full bg-navy-800 hover:bg-navy-700 border border-navy-600 hover:border-maccabi-blue/50 text-white px-3 py-2 rounded-lg text-xs transition-all"
                 >
                   <SocialIcon platform={link.platform} className="w-4 h-4" />
                   {link.label}
