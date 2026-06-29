@@ -8,8 +8,6 @@ export const revalidate = 1200;
 
 const stats = [
   { label: "פרקים", value: "278+", color: "text-maccabi-yellow" },
-  { label: "הורדות", value: "191K+", color: "text-maccabi-blue-light" },
-  { label: "מגישים", value: "4", color: "text-maccabi-yellow" },
   { label: "שנים", value: "7+", color: "text-maccabi-blue-light" },
 ];
 
@@ -124,7 +122,7 @@ export default async function HomePage() {
       {/* Stats */}
       <section className="border-y border-navy-700 bg-navy-900/40">
         <div className="max-w-6xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="flex justify-center gap-16 md:gap-24 text-center">
             {stats.map((stat) => (
               <div key={stat.label}>
                 <div className={`text-3xl font-black ${stat.color}`}>{stat.value}</div>
