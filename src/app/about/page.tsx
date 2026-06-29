@@ -16,7 +16,7 @@ const highlights = [
   {
     icon: Users,
     title: "4 מגישים",
-    description: "אמיר, גיא, יאיר ואיתי – קולות שונים, דעה אחת",
+    description: "אהבה אחת",
   },
   {
     icon: Radio,
@@ -25,8 +25,8 @@ const highlights = [
   },
   {
     icon: Heart,
-    title: "191K+ הורדות",
-    description: "קהילת אוהדים גדולה של מכבי ואוהבי כדורסל",
+    title: "חיים את מכבי",
+    description: "לפני המשחק, אחרי המשחק ובין לבין.",
   },
 ];
 
