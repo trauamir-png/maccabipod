@@ -102,7 +102,16 @@ export default function Footer() {
 
         <div className="border-t border-navy-700 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-white text-xs">
-            © {new Date().getFullYear()} אמיר טראו · כל הזכויות שמורות
+            © {new Date().getFullYear()}{" "}
+            <a
+              href="https://amirtrau.co.il"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-maccabi-yellow transition-colors"
+            >
+              אמיר טראו
+            </a>
+            {" "}· כל הזכויות שמורות
           </p>
           <p className="text-white text-xs">
             יאללה מכבי!
