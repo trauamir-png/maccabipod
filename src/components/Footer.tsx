@@ -107,7 +107,7 @@ export default function Footer() {
               href="https://amirtrau.co.il"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-maccabi-yellow transition-colors"
+              className="text-maccabi-blue-light hover:text-maccabi-yellow transition-colors"
             >
               אמיר טראו
             </a>
