@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowRight, Calendar, Clock, Tag, Share2 } from "lucide-react";
 import { podcastMeta } from "@/lib/mockData";
 import { getEpisodes, getEpisodeBySlug } from "@/lib/rss";
+import { youtubeEpisodes } from "@/lib/videoEpisodes";
 import AudioPlayer from "@/components/AudioPlayer";
 import SocialIcon from "@/components/SocialIcon";
 import EpisodeCard from "@/components/EpisodeCard";
@@ -61,6 +62,8 @@ export default async function EpisodePage({ params }: Props) {
     ? stripHtml(episode.longDescription)
     : episode.description;
 
+  const youtubeId = youtubeEpisodes[episode.episodeNumber];
+
   return (
     <div className="max-w-3xl mx-auto px-4 py-10">
       {/* Breadcrumb */}
@@ -103,32 +106,75 @@ export default async function EpisodePage({ params }: Props) {
         )}
       </div>
 
-      {/* Episode image */}
-      {episode.imageUrl && (
-        <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl ring-2 ring-yellow-400/20 mb-7">
-          <Image
-            src={episode.imageUrl}
-            alt={episode.title}
-            fill
-            className="object-cover"
-            priority
+      {/* YouTube embed (this episode only) */}
+      {youtubeId && (
+        <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl ring-2 ring-yellow-400/20 mb-6 bg-black">
+          <iframe
+            src={`https://www.youtube.com/embed/${youtubeId}`}
+            title={episode.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full"
           />
         </div>
       )}
 
-      {/* Central audio player */}
-      {episode.audioUrl && (
-        <div className="mb-6">
-          <AudioPlayer
-            audioUrl={episode.audioUrl}
-            episodeTitle={episode.title}
-            episodeNumber={episode.episodeNumber}
-          />
-        </div>
+      {episode.isVideo && !youtubeId ? (
+        /* Video player (Podbean video file, this episode only) */
+        episode.audioUrl && (
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl ring-2 ring-yellow-400/20 mb-6 bg-black">
+            <video
+              controls
+              preload="metadata"
+              poster={episode.imageUrl || undefined}
+              className="w-full h-full"
+            >
+              <source src={episode.audioUrl} />
+              הדפדפן שלך אינו תומך בהצגת וידאו.
+            </video>
+          </div>
+        )
+      ) : (
+        <>
+          {/* Episode image (skipped when a YouTube embed already covers the visual) */}
+          {!youtubeId && episode.imageUrl && (
+            <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl ring-2 ring-yellow-400/20 mb-7">
+              <Image
+                src={episode.imageUrl}
+                alt={episode.title}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          )}
+
+          {/* Central audio player */}
+          {episode.audioUrl && (
+            <div className="mb-6">
+              <AudioPlayer
+                audioUrl={episode.audioUrl}
+                episodeTitle={episode.title}
+                episodeNumber={episode.episodeNumber}
+              />
+            </div>
+          )}
+        </>
       )}
 
       {/* Platform buttons */}
-      <div className="flex flex-col sm:flex-row gap-3 mb-10">
+      <div className={`flex gap-3 mb-10 ${youtubeId ? "flex-row gap-2" : "flex-col sm:flex-row"}`}>
+        {youtubeId && (
+          <a
+            href={`https://www.youtube.com/watch?v=${youtubeId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 flex items-center justify-center gap-1.5 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-xs py-2.5 px-2 rounded-xl transition-colors border border-zinc-700 hover:border-yellow-400/50 text-center leading-tight"
+          >
+            <SocialIcon platform="youtube" className="w-5 h-5 flex-shrink-0" />
+            צפייה ב-YouTube
+          </a>
+        )}
         {podcastMeta.socialLinks
           .filter((l) => l.platform === "spotify" || l.platform === "apple")
           .map((link) => (
@@ -137,9 +183,13 @@ export default async function EpisodePage({ params }: Props) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-3 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-sm py-3.5 px-5 rounded-xl transition-colors border border-zinc-700 hover:border-yellow-400/50"
+              className={
+                youtubeId
+                  ? "flex-1 flex items-center justify-center gap-1.5 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-xs py-2.5 px-2 rounded-xl transition-colors border border-zinc-700 hover:border-yellow-400/50 text-center leading-tight"
+                  : "flex-1 flex items-center justify-center gap-3 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-sm py-3.5 px-5 rounded-xl transition-colors border border-zinc-700 hover:border-yellow-400/50"
+              }
             >
-              <SocialIcon platform={link.platform} className="w-6 h-6" />
+              <SocialIcon platform={link.platform} className={youtubeId ? "w-5 h-5 flex-shrink-0" : "w-6 h-6"} />
               האזנה ב-{link.label}
             </a>
           ))}
@@ -148,9 +198,13 @@ export default async function EpisodePage({ params }: Props) {
             href={episode.episodeLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-3 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-sm py-3.5 px-5 rounded-xl transition-colors border border-zinc-700 hover:border-yellow-400/50"
+            className={
+              youtubeId
+                ? "flex-1 flex items-center justify-center gap-1.5 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-xs py-2.5 px-2 rounded-xl transition-colors border border-zinc-700 hover:border-yellow-400/50 text-center leading-tight"
+                : "flex-1 flex items-center justify-center gap-3 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-sm py-3.5 px-5 rounded-xl transition-colors border border-zinc-700 hover:border-yellow-400/50"
+            }
           >
-            <Share2 className="w-6 h-6" />
+            <Share2 className={youtubeId ? "w-5 h-5 flex-shrink-0" : "w-6 h-6"} />
             האזנה ב-Podbean
           </a>
         )}

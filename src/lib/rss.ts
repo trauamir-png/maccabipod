@@ -114,6 +114,7 @@ export async function getEpisodes(): Promise<Episode[]> {
         episodeNumber: epNum,
         imageUrl,
         audioUrl: item.enclosure?.url || "",
+        isVideo: (item.enclosure?.type || "").startsWith("video/"),
         episodeLink: item.link || "",
         tags: [],
         guests: [],

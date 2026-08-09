@@ -10,6 +10,7 @@ export interface Episode {
   episodeNumber: number;
   imageUrl: string;
   audioUrl: string;
+  isVideo: boolean;
   episodeLink: string;
   tags?: string[];
   guests?: string[];
