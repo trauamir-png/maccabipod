@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -43,6 +44,11 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Script
+          src="https://pulseos-psi.vercel.app/tracker.js"
+          data-site="6a96cf45ce2399be23319efc93df1ac5"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

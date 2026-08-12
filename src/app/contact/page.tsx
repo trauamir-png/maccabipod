@@ -57,7 +57,7 @@ export default function ContactPage() {
       <div className="bg-zinc-900 rounded-2xl border border-zinc-800 p-6">
         <h2 className="text-white font-bold mb-4 flex items-center gap-2">
           <Mail className="w-5 h-5 text-yellow-400" />
-          דוא"ל
+          דוא&quot;ל
         </h2>
         <p className="text-white text-sm mb-3">
           לשאלות, הצעות לשיתוף פעולה, ורעיונות לפרקים:
