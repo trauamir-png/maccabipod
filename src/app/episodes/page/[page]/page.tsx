@@ -4,7 +4,6 @@ import { getEpisodes } from "@/lib/rss";
 import EpisodeCard from "@/components/EpisodeCard";
 import Pagination from "@/components/Pagination";
 
-export const revalidate = 1200;
 export const dynamicParams = true;
 
 const EPISODES_PER_PAGE = 15;

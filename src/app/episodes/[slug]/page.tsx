@@ -9,7 +9,6 @@ import AudioPlayer from "@/components/AudioPlayer";
 import SocialIcon from "@/components/SocialIcon";
 import EpisodeCard from "@/components/EpisodeCard";
 
-export const revalidate = 1200;
 export const dynamicParams = true;
 
 interface Props {
