@@ -83,6 +83,7 @@ export default async function HomePage() {
                         src={latestEpisode.imageUrl || "/logo-square.png"}
                         alt={latestEpisode.title}
                         fill
+                        unoptimized
                         className="object-cover"
                         priority
                       />

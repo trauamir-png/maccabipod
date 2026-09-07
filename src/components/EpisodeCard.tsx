@@ -36,6 +36,7 @@ function EpisodeCover({
         src={imageUrl}
         alt={title}
         fill
+        unoptimized
         className="object-cover"
         sizes={size === "lg" ? "(max-width: 768px) 100vw, 50vw" : "120px"}
       />

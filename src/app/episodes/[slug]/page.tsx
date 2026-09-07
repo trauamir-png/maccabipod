@@ -142,6 +142,7 @@ export default async function EpisodePage({ params }: Props) {
                 src={episode.imageUrl}
                 alt={episode.title}
                 fill
+                unoptimized
                 className="object-cover"
                 priority
               />
