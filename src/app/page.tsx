@@ -160,8 +160,9 @@ export default async function HomePage() {
           <div className="flex-1 text-center md:text-right">
             <h2 className="text-xl font-bold text-white mb-2">מי אנחנו?</h2>
             <p className="text-white text-sm leading-relaxed">
-              אמיר טראו, גיא קופיצ&apos;ינסקי, יאיר זרצקי ואיתי כהן – ארבעה
-              אוהדים שיודעים לדבר על כדורסל. 278+ פרקים ותשוקה אמיתית למכבי תל אביב.
+              אמיר טראו, גיא קופיצ&apos;ינסקי, יאיר זרצקי, איתי כהן ודניאלה
+              אלבאום – חמישה אוהדים שיודעים לדבר על כדורסל. 278+ פרקים ותשוקה
+              אמיתית למכבי תל אביב.
             </p>
           </div>
           <Link
