@@ -38,6 +38,7 @@ export default function MaccabipodBetsPage() {
               alt="הורידו ב-Google Play"
               width={285}
               height={64}
+              unoptimized
               className="h-[64px] w-auto"
             />
           </a>
