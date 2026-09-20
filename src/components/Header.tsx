@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { href: "/", label: "בית" },
   { href: "/episodes", label: "פרקים" },
+  { href: "/maccabipod-bets", label: "הימורי מכביפוד" },
   { href: "/about", label: "אודות" },
   { href: "/contact", label: "צור קשר" },
 ];

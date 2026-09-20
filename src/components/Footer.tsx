@@ -41,6 +41,7 @@ export default function Footer() {
               {[
                 { href: "/", label: "בית" },
                 { href: "/episodes", label: "כל הפרקים" },
+                { href: "/maccabipod-bets", label: "הימורי מכביפוד" },
                 { href: "/about", label: "אודות" },
                 { href: "/contact", label: "צור קשר" },
               ].map((link) => (
