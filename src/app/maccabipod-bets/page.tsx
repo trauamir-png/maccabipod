@@ -34,10 +34,10 @@ export default function MaccabipodBetsPage() {
             className="inline-block"
           >
             <Image
-              src="/images/google-play-badge.png"
+              src="/images/google-play-logo.png"
               alt="הורידו ב-Google Play"
-              width={215}
-              height={83}
+              width={285}
+              height={64}
               className="h-[64px] w-auto"
             />
           </a>
