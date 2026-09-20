@@ -60,6 +60,30 @@ export default function MaccabipodBetsPage() {
           </a>
         </div>
       </div>
+
+      <div className="mt-16">
+        <h2 className="text-2xl font-bold text-white mb-5 text-center">
+          חוקי ההימורים
+        </h2>
+        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+          <ol className="list-none space-y-4 text-white text-sm leading-relaxed">
+            <li>
+              1. בכל פרק חברי הפאנל יציגו את ההימורים השבועיים שלנו. בסיום
+              הפרק ההימורים יופיעו גם באתר.
+            </li>
+            <li>
+              2. ההימורים נסגרים חצי שעה לפני פתיחת המשחק. יש להקפיד למלא את
+              ההימורים עד הדדליין אחרת לא ניתן יהיה לכלול את ההימורים שלו
+              בתחרות באותו השבוע.
+            </li>
+            <li>
+              3. על מנת להיות זכאים לפרס בסיום העונה (במידה וסיימתם באחד
+              המקומות שאכן מקנים פרס), עליכם להמר בלפחות 65% מההימורים במהלך
+              העונה. במידה ולא הגעתם ל־65%, לא תהיו זכאים לפרס.
+            </li>
+          </ol>
+        </div>
+      </div>
     </div>
   );
 }
