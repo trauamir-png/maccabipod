@@ -84,6 +84,24 @@ export default function MaccabipodBetsPage() {
           </ol>
         </div>
       </div>
+
+      <div className="mt-16">
+        <h2 className="text-2xl font-bold text-white mb-5 text-center">
+          מדריך לאפליקציית ההימורים החדשה
+        </h2>
+        <p className="text-white text-sm leading-relaxed text-center mb-6">
+          אנחנו מצרפים לכם סרטון הדרכה על אפליקציית ההימורים החדשה שלנו:
+        </p>
+        <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl ring-2 ring-yellow-400/20 bg-black">
+          <iframe
+            src="https://www.youtube.com/embed/2NmNng8pmTg"
+            title="מדריך לאפליקציית ההימורים החדשה"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full"
+          />
+        </div>
+      </div>
     </div>
   );
 }
