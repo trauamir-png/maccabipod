@@ -149,8 +149,8 @@ export default async function EpisodePage({ params }: Props) {
             </div>
           )}
 
-          {/* Central audio player */}
-          {episode.audioUrl && (
+          {/* Central audio player (hidden when a YouTube video is mapped for this episode) */}
+          {!youtubeId && episode.audioUrl && (
             <div className="mb-6">
               <AudioPlayer
                 audioUrl={episode.audioUrl}
@@ -164,17 +164,6 @@ export default async function EpisodePage({ params }: Props) {
 
       {/* Platform buttons */}
       <div className={`flex gap-3 mb-10 ${youtubeId ? "flex-row gap-2" : "flex-col sm:flex-row"}`}>
-        {youtubeId && (
-          <a
-            href={`https://www.youtube.com/watch?v=${youtubeId}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-1.5 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-xs py-2.5 px-2 rounded-xl transition-colors border border-zinc-700 hover:border-yellow-400/50 text-center leading-tight"
-          >
-            <SocialIcon platform="youtube" className="w-5 h-5 flex-shrink-0" />
-            צפייה ב-YouTube
-          </a>
-        )}
         {podcastMeta.socialLinks
           .filter((l) => l.platform === "spotify" || l.platform === "apple")
           .map((link) => (
@@ -193,7 +182,7 @@ export default async function EpisodePage({ params }: Props) {
               האזנה ב-{link.label}
             </a>
           ))}
-        {episode.episodeLink && (
+        {!youtubeId && episode.episodeLink && (
           <a
             href={episode.episodeLink}
             target="_blank"

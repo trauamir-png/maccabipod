@@ -16,7 +16,7 @@ const highlights = [
   {
     icon: Users,
     title: "4 מגישים",
-    description: "אהבה אחת",
+    description: "מגישה אחת",
   },
   {
     icon: Radio,
